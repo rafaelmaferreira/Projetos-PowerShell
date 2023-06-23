@@ -5,9 +5,9 @@
         Install-Module -Name Az.Storage -Force
 
         #storage account
-        $StorageAccountName = "stolabkws002"
+        $StorageAccountName = "xxx"
         #storage key
-        $StorageAccountKey = "BFbh8sNPYgfUcy3vzRPZht7/WtVgcvVgPZjSjz7bvz7w9Po1+ZuRoODcvcHQJPYd4RECjdAUJSZr+AStylaQ7w=="
+        $StorageAccountKey = "xxx"
         #container name
         $containerName = "kws"
 
@@ -75,11 +75,11 @@ Start-Sleep -Seconds 65
         Start-Sleep 10
 
 
-        $Username = 'rafael@kws.local'
-        $Password = 'laboratorio123*'
+        $Username = 'xxx'
+        $Password = 'xxx'
         [SecureString]$Securepassword = $Password | ConvertTo-SecureString -AsPlainText -Force 
         $credential = New-Object System.Management.Automation.PSCredential -ArgumentList $Username, $Securepassword
-        Add-Computer –domainname "kws.local" -Credential $credential -OUPath "OU=BACKEND,OU=EUMA,DC=kws,DC=local"
+        Add-Computer –domainname "xxx" -Credential $credential -OUPath "xxx"
         Restart-Computer
 
         Write-Host ("Process completed...")
