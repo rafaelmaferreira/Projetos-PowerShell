@@ -25,7 +25,7 @@ Foreach ($sub in $subs) {
     if($action -eq "Start"){
 
         ## Start the VM
-        $vms = Get-AzVM | Where-Object {$_.Tags["ambevtech.start"] -like $horario}
+        $vms = Get-AzVM | Where-Object {$_.Tags["xxx"] -like $horario}
         Foreach ($vm in $vms) {
             Write-Output "Ligando VM: $($vm.Name)"
             $status = Start-AzVM -ResourceGroupName $vm.ResourceGroupName -Name $vm.Name
@@ -35,7 +35,7 @@ Foreach ($sub in $subs) {
     }elseif($action -eq "Stop"){
         ## Stop the VM
 
-        $vms = Get-AzVM | Where-Object {$_.Tags["ambevtech.stop"] -like $horario}
+        $vms = Get-AzVM | Where-Object {$_.Tags["xxx"] -like $horario}
         Foreach ($vm in $vms) {
             Write-Output "Desligando VM: $($vm.Name)"
             $status = Stop-AzVM -ResourceGroupName $vm.ResourceGroupName -Name $vm.Name -Force
