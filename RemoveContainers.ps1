@@ -1,14 +1,14 @@
-connect-azaccount -TenantId cef04b19-7776-4a94-b89b-375c77a8f936
+connect-azaccount -TenantId xxx
 
-$SubscriptionId = 'd33a4ccf-4568-41fc-8b2d-3d920a88486e'
+$SubscriptionId = 'xxx'
 $context = Set-AzContext -SubscriptionId $SubscriptionId
 
-# Verifica se o grupo de recursos é "ambev-adtsys-rg-br-prod"
+# Verifica se o grupo de recursos é "xxx"
 $rgName = "ambev-adtsys-rg-br-non-prod"
 $rg = Get-AzResourceGroup | Where-Object { $_.ResourceGroupName -eq $rgName }
 
     # Obtenha todas as contas de armazenamento no grupo de recursos
-    $StorageAccountName = "stadtsysnpr001"
+    $StorageAccountName = "xxx"
     $StorageAccount = Get-AzStorageAccount -ResourceGroupName $rg.ResourceGroupName | Where-Object { $_.StorageAccountName -eq $StorageAccountName }
         # Obtenha o contexto da conta de armazenamento
         $Context = $StorageAccount.Context        
